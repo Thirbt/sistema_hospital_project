@@ -79,7 +79,7 @@ Este é o diagrama do projeto eletrônico, onde estarão contidos todos os circu
 
 ### Software
 
-Para obter mais informações sobre o projeto do Software, clique no __[link](https://github.com/AdeniltonR/Desenvolvimento-Web-Frameworks/tree/main/Software/Python)__ a seguir.
+Para obter mais informações sobre o projeto do Software, clique no __[link](https://github.com/Thirbt/sistema_hospital_project/tree/main/Software/Python)__ a seguir.
 
 `[Adicionar uma foto ou Gif]`
 

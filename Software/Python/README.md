@@ -1,4 +1,4 @@
-# _Web Sensores_
+# _Sistema de Hospital_
 
 ![Software version](https://img.shields.io/badge/Software_version-1.0.0-blue)
 
@@ -74,9 +74,7 @@ meu_projeto_rpi/
 
 ## Links de Estudo
 
-`Link`para adicionar
-
-`Link`para adicionar
+[**Desenvolvimento Web - Frameworks;**](https://github.com/caio-ireno/Desenvolvimento-web-FACENS-2025-1/tree/main)
 
 `Link`para adicionar
 
@@ -141,10 +139,10 @@ sudo apt install python3 python3-venv
     ```
     
 5. **Execute o Comando para Criar o Ambiente Virtual:**
-    - Substitua `nome_do_seu_ambiente` pelo nome desejado para o seu ambiente virtual, nome do meu ambiente é `nome`.
+    - Substitua `nome_do_seu_ambiente` pelo nome desejado para o seu ambiente virtual, nome do meu ambiente é `web`.
     
     ```bash
-    python3 -m venv nome_do_seu_ambiente
+    python3 -m venv web
     ```
     
     Isso criará uma pasta chamada `nome_do_seu_ambiente` contendo o ambiente virtual.
@@ -205,7 +203,7 @@ rm -rf nome_do_seu_ambiente
 Para ativar o ambiente virtual, execute o comando apropriado para o seu sistema:
 
 ```bash
-source nome_do_seu_ambiente/bin/activate
+source web/bin/activate
 ```
 
 Para desativar o ambiente virtual e retornar ao ambiente global do Python, execute:
