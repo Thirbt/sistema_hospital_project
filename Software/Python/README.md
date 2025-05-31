@@ -34,42 +34,57 @@
 
 ## Introdução
 
-Este é um projeto Python incrível que faz [descrição curta do projeto].
+Este é um projeto Python desenvolvido para demonstrar, de forma prática, o funcionamento de um Sistema de Gestão Hospitalar, utilizando arquitetura RESTful. O sistema permite o cadastro, edição, exclusão e listagem de médicos, pacientes e consultas, com relacionamento entre essas entidades e persistência em banco de dados relacional. O projeto está sendo desenvolvido em ambiente Linux utilizando WSL (Windows Subsystem for Linux) ou Windows.
 
 ## Objetivo
 
-O que faz [descrição curta do projeto].
+O objetivo deste projeto é **oferecer uma solução simples e funcional** para o gerenciamento de atendimentos hospitalares, possibilitando:
+
+- O cadastro de médicos com suas especialidades e CRM;
+- O vínculo de pacientes a médicos responsáveis;
+- O agendamento e registro de consultas associadas a pacientes;
+- A visualização organizada de todas essas informações, mantendo integridade dos dados e boa estrutura de código.
 
 ## Estrutura do Projeto
 
 Aqui está uma visão geral da estrutura básica do projeto:
 
 ```
-meu_projeto_rpi/
+sistema_hospital/
 ├── README.md                        # Descrição do projeto e instruções de uso
-├── main.py                          # Arquivo principal (orquestra os módulos)
-├── requirements.txt                 # Dependências do projeto (pyserial, etc.)
-├── src/                             # Módulos principais (como pacotes Python)
-│   ├── modulo_1/                    # Comunicação com ESP32 via UART
+├── main.py                          # Arquivo principal (inicia a aplicação Flask)
+├── requirements.txt                 # Dependências do projeto (Flask, etc.)
+├── src/                             # Código-fonte principal
+│   ├── controllers/                 # Lógica de controle e rotas Flask (camada REST)
 │   │   ├── __init__.py
-│   │   └── uart_comm.py
-│   ├── modulo_2/                    # Controle da GoPro (disparo/configuração)
+│   │   ├── medico_controller.py
+│   │   ├── paciente_controller.py
+│   │   └── consulta_controller.py
+│   ├── models/                      # Definições das entidades e ORM (ex: SQLAlchemy)
 │   │   ├── __init__.py
-│   │   └── camera_ctrl.py
-│   ├── storage_mgr/                 # Organização e salvamento de imagens
+│   │   ├── medico.py
+│   │   ├── paciente.py
+│   │   └── consulta.py
+│   ├── services/                    # Regras de negócio e operações principais
 │   │   ├── __init__.py
-│   │   └── storage_mgr.py
-│   └── utils/                       # Funções auxiliares (log, timestamp, etc.)
+│   │   ├── medico_service.py
+│   │   ├── paciente_service.py
+│   │   └── consulta_service.py
+│   └── utils/                       # Utilitários auxiliares (validações, helpers, etc.)
 │       ├── __init__.py
 │       └── helpers.py
-├── data/                            # Dados gerados durante execução
-│   ├── logs/                        # Logs de diagnóstico
-│   ├── imagens/                     # Imagens organizadas por inspeção
-│   └── temp/                        # Arquivos temporários, se necessário
-├── config/                          # Configurações JSON, parâmetros ajustáveis
+├── database/                        # Inicialização e conexão com o banco de dados
+│   ├── __init__.py
+│   └── db_config.py
+├── config/                          # Configurações do projeto (ex: conexão, ambiente)
 │   └── settings.json
-└── scripts/                         # Scripts auxiliares (testes, ferramentas)
-    └── usb.py
+├── tests/                           # Testes automatizados
+│   ├── __init__.py
+│   ├── test_medico.py
+│   ├── test_paciente.py
+│   └── test_consulta.py
+└── scripts/                         # Scripts de manutenção (seed, migração, etc.)
+    └── populate_db.py
 ```
 
 ## Links de Estudo
@@ -80,7 +95,7 @@ meu_projeto_rpi/
 
 ## Fluxograma
 
-`[Adicionar uma imagem]`
+![Fluxograma.png](Docs/Fluxograma.png)
 
 ## Instale Git
 
