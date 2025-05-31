@@ -12,6 +12,7 @@
 - [Objetivo](#objetivo)
 - [Requisitos](#requisitos)
 - [Informações Adicionais](#informações-adicionais)
+    - [Software](#software)
 
 ## Histórico de Versão
 
@@ -37,7 +38,7 @@ Para manter um histórico de commits organizado, siga as seguintes diretrizes:
 
 ## Resumo
 
-Projeto desenvolvido como parte da disciplina de Desenvolvimento Web - Frameworks, com foco na construção de aplicações web completas utilizando front-end com HTML, CSS e JavaScript, e back-end com Flask e SQLite. O desenvolvimento é realizado em ambiente Linux por meio do WSL (Windows Subsystem for Linux), simulando um ambiente real de produção e preparando o aluno para desafios técnicos de aplicações distribuídas.
+Projeto desenvolvido como parte da disciplina de [Desenvolvimento Web - Frameworks](https://github.com/caio-ireno/Desenvolvimento-web-FACENS-2025-1/tree/main), com foco na construção de aplicações web completas utilizando front-end com HTML, CSS e JavaScript, e back-end com Flask e SQLite. O desenvolvimento é realizado em ambiente Linux por meio do WSL (Windows Subsystem for Linux), simulando um ambiente real de produção e preparando o aluno para desafios técnicos de aplicações distribuídas.
 
 ## Objetivo
 
@@ -70,12 +71,6 @@ O objetivo do projeto é capacitar o aluno para:
 - Ferramentas de linha de comando: `curl`, `pip`, `venv`, `sqlite3`
 
 ## Informações Adicionais
-
-### Diagrama de Bloco
-
-Este é o diagrama do projeto eletrônico, onde estarão contidos todos os circuitos necessários para o funcionamento adequado.
-
-`[Adicionar uma imagem]`
 
 ### Software
 
