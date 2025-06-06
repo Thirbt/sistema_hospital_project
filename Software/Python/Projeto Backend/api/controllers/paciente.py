@@ -22,12 +22,12 @@ def get_paciente(id):
     return jsonify({"message": "Paciente não encontrado!"}), 404
 
 @paciente_bp.route('/<int:id>', methods=['PUT'])
-def update_paciente(id):
+def update_paciente_route(id):
     data = request.get_json()
     update_paciente(id, data.get('nome'), data.get('idade'))
     return jsonify({"message": "Paciente atualizado com sucesso!"})
 
 @paciente_bp.route('/<int:id>', methods=['DELETE'])
-def delete_paciente(id):
+def delete_paciente_route(id):
     delete_paciente(id)
     return jsonify({"message": "Paciente deletado com sucesso!"})
