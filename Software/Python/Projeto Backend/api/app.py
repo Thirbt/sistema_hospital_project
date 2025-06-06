@@ -1,5 +1,6 @@
 from controllers.medico import medico_bp
 from controllers.paciente import paciente_bp
+from controllers.consulta import consulta_bp
 
 from config import app,db
 from flask_cors import CORS
@@ -13,6 +14,7 @@ with app.app_context():
 
 app.register_blueprint(medico_bp)
 app.register_blueprint(paciente_bp)
+app.register_blueprint(consulta_bp)
 
 
 if __name__ == '__main__':
