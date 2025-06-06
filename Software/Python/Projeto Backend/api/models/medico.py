@@ -8,7 +8,6 @@ class Medico(db.Model):
     especialidade = db.Column(db.String(100), nullable=False)
     crm = db.Column(db.String(20), nullable=False, unique=True)
 
-
     def __init__(self, nome, especialidade, crm):
         self.nome = nome
         self.especialidade = especialidade
