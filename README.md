@@ -1,5 +1,15 @@
 # 🏥 Hospital API - Gerenciamento de Consultas Médicas
 
+## 👨‍💻 Integrantes
+
+* Thiago Roberto Rocha
+* Adenilton Ribeiro 
+* Júlia Martins
+* Jean Michel
+* Priscila Anselmo
+
+## 🖥️ Introdução 
+
 Bem-vindo à **Hospital API**, uma API RESTful desenvolvida em **Python** utilizando o framework **Flask** e **SQLAlchemy** para gerenciar informações de pacientes, médicos e consultas. Esta API foi construída com foco em **modularidade, robustez** e **tratamento abrangente de exceções**, garantindo uma comunicação clara e segura com o cliente.
 
 ## 🚀 Funcionalidades
