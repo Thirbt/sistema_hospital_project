@@ -1,6 +1,10 @@
 from models.consulta import Consulta
 from models.medico import Medico
 from models.paciente import Paciente
+from dtos.consulta_dto import ConsultaDTO
+from dtos.paciente_dto import PacienteDTO
+from dtos.medico_dto import MedicoDTO
+from sqlalchemy.orm import joinedload
 from extensions import db
 from flask import jsonify
 from sqlalchemy.exc import SQLAlchemyError, IntegrityError
@@ -43,8 +47,11 @@ def create_consulta(data, horario, descricao, paciente_id, medico_id):
     
 def get_consulta():
     try:
-        consultas = Consulta.query.all()
-        return jsonify([consulta.to_dict() for consulta in consultas]), 200
+        consultas = db.session.query(Consulta).options(
+            joinedload(Consulta.medico),
+            joinedload(Consulta.paciente)
+        ).all()
+        return jsonify([ConsultaDTO(consulta).to_dict() for consulta in consultas]), 200
     except SQLAlchemyError as sqlalchemy_error:
         return jsonify({"message": f"Erro de banco de dados ao buscar consultas: {str(sqlalchemy_error)}"}), 500
     except Exception as exception:
@@ -54,14 +61,17 @@ def get_consulta_by_id(consulta_id):
     if not consulta_id:
         return jsonify({"message": "Informe o ID da consulta!"}), 400
     try:
-        consulta = db.session.get(Consulta, consulta_id)
+        consulta = db.session.query(Consulta).options(
+            joinedload(Consulta.medico),
+            joinedload(Consulta.paciente)
+        ).get(consulta_id)
         if not consulta:
             return jsonify({"message": f"A consulta com ID {consulta_id} não foi encontrada!"}), 404
-        return jsonify(consulta.to_dict()), 200
+        return  jsonify(ConsultaDTO(consulta).to_dict()) 
     except SQLAlchemyError as sqlalchemy_error:
-        return jsonify({"message": f"Erro de banco de dados ao buscar consulta: {str(sqlalchemy_error)}"}), 500
+        return jsonify({"message": f"Erro de banco de dados ao buscar consultas: {str(sqlalchemy_error)}"}), 500
     except Exception as exception:
-        return jsonify({"message": f"Erro inesperado ao buscar consulta: {str(exception)}"})
+        return jsonify({"message": f"Erro inesperado ao buscar consultas: {str(exception)}"}), 500
 
 def update_consulta(consulta_id, data, horario, descricao, paciente_id, medico_id):
     if not paciente_id:
