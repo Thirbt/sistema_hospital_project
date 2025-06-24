@@ -1,4 +1,5 @@
 from flask import Flask
+from extensions import db, cors, swagger
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from flasgger import Swagger
@@ -44,9 +45,9 @@ app.config['SWAGGER'] = {
     ]
 }
 
-db = SQLAlchemy(app) 
-CORS(app, origins=["*"]) 
-swagger = Swagger(app) 
+db.init_app(app)
+cors.init_app(app, origins=["*"])
+swagger.init_app(app)
 
 app.register_blueprint(medico_bp)
 app.register_blueprint(paciente_bp)
