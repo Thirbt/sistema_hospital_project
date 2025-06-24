@@ -12,6 +12,10 @@
 
 Bem-vindo à **Hospital API**, uma API RESTful desenvolvida em **Python** utilizando o framework **Flask** e **SQLAlchemy** para gerenciar informações de pacientes, médicos e consultas. Esta API foi construída com foco em **modularidade, robustez** e **tratamento abrangente de exceções**, garantindo uma comunicação clara e segura com o cliente.
 
+## 🤖🌐 Deploy - Render
+
+A aplicação está hospedada no Render e é possível visualizar sua documentação swagger através do link: **[Documentação Swagger](https://system-hospital-project.onrender.com/apidocs/)**
+
 ## 🚀 Funcionalidades
 
 Esta API permite o gerenciamento completo das seguintes entidades:
