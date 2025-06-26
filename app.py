@@ -3,6 +3,7 @@ from extensions import db, cors, swagger
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from flasgger import Swagger
+import os
 
 from models.medico import Medico
 from models.paciente import Paciente
@@ -15,7 +16,7 @@ from controllers.consulta import consulta_bp
 app = Flask(__name__)
 
 app.config['HOST'] = '0.0.0.0'
-app.config['PORT'] = 8080
+app.config['PORT'] = int(os.environ.get("PORT", 8080))
 app.config['DEBUG'] = False
 
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///app.db"
