@@ -1,4 +1,5 @@
 from models.medico import Medico
+from models.consulta import Consulta
 from extensions import db
 from flask import jsonify
 from sqlalchemy.exc import SQLAlchemyError, IntegrityError
@@ -78,6 +79,9 @@ def delete_medico(medico_id):
         medico = db.session.get(Medico, medico_id)
         if not medico:
             return jsonify({"message": f"Médico com ID {medico_id} não foi encontrado!"}), 404
+        consultas_associadas = db.session.query(Consulta).filter_by(medico_id=medico_id).count()
+        if consultas_associadas > 0:
+            return jsonify({"message": f"O médico {medico.nome} já está em {consultas_associadas} consulta(s) e não pode ser deletado."}), 409
         db.session.delete(medico)
         db.session.commit()
         return jsonify({"message": "Médico excluído com sucesso!"}), 200
