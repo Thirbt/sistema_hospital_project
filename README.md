@@ -74,7 +74,7 @@ O objetivo do projeto é capacitar o aluno para:
 
 ### Software
 
-Para obter mais informações sobre o projeto do Software, clique no __[link](https://github.com/Thirbt/sistema_hospital_project/tree/main/Software/Python)__ a seguir.
+Para obter mais informações sobre o projeto do Software, clique no __[link](https://github.com/Thirbt/sistema_hospital_project/tree/dev-adenilton/Software/Python)__ a seguir.
 
 `[Adicionar uma foto ou Gif]`
 
