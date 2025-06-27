@@ -128,3 +128,9 @@ Aqui você poderá ver todos os endpoints disponíveis, seus parâmetros, exempl
 * Chaves Estrangeiras: Ao criar ou atualizar uma consulta, o sistema verifica se os IDs de paciente e médico fornecidos realmente existem no banco de dados, retornando 404 Not Found caso contrário.
 
 * Unicidade: O campo crm do médico é validado como único. Tentar cadastrar ou atualizar um médico com um CRM já existente resultará em um erro 409 Conflict.
+
+## 📓 Modelo de Dados (Diagrama de Classes)
+
+<center>
+  <img src="https://mermaid.ink/img/pako:eNqdU01PwzAM_SuRTyDKtH5sa3MdFw5DSNxQpclKQhfRJlWaSsDU_47bdWPTpgnIJc6zn59fm2xBWKmAgyixaR40Fg6r3DBaA8KW1jRt6ZFtd2i_7h6NV4VyTMsj8MU7bQom0eM5urEOnbYXylUjnBZoL7SvUWhF8fpEZ5-tlNTCnua8XRPob25Zv-0SXW6ODa0G2q_tGFupc1Q1tRIaSy1RXkgLV_1tqOfR6X_H-ik9neeq9OHX5vCUA7u_pyCk4DAMJwALZagpstq6HK4Tx0870DzR9J4GARROS-DetSqASrkK-yMMdnPwG0V2oCdKdO-9TkecGs2rtdWe5mxbbIC_YdnQqa3ppqnxxh5QR7LKLW1rPPA0HXoA38IH8ChcTKI0C-N0nqTTRRJT9hN4Ek6iKIvncTRdhNlsFncBfA2q08ksyUKqnqdhROXZPABy6K1bjW-m37pvvgn4CA?type=png" alt="Diagrama de Classes Mermaid">
+</center>
